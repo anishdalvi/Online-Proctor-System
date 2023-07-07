@@ -1,0 +1,59 @@
+*{
+    font-family: 'Poppins', sans-serif;
+  }
+
+
+body,textarea,form{
+
+    background-color: 	#F5F5F5; /* whitesmoke */
+
+  
+  }
+
+    #input1 {
+        height: 25vh;
+        width: 55vw;
+        border: 0;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        table-layout: auto;
+
+    }
+
+    th,
+    td {
+        padding: 20px;
+    }
+
+    
+
+    /* input,
+    button {
+        font-size: 20px;
+        padding: 10px;
+        width: 15%;
+    } */
+    /* .buttons{
+        margin:10vw; 
+    }
+    .button1{
+        margin:10vw;
+    } */
+
+    #bottombtns{
+        padding-right: 30px;
+        
+    }
+
+    #back{
+        width: 80px;
+    }

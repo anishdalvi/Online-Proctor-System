@@ -1,0 +1,129 @@
+@charset "ISO-8859-1";
+
+*{
+    font-family: 'Poppins', sans-serif;
+    
+  }
+
+  body,input{
+
+   /*  background-color: #FAF9F6; / / Floral White */
+   /*  background-color: #FFF5EE; / / seashell */
+   background-color: 	#F5F5F5; /* whitesmoke */
+
+  
+  }
+/* div1{
+	width:400px;
+	height:400px;
+		background:red;
+	
+} */
+dropdown{
+	margin-left:45vw;
+	
+}
+.nav_log{
+    float:right;
+    margin: 10px;
+    
+} 
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+    table-layout: fixed;
+    
+}
+
+td,th{
+    padding: 10px;
+    border: 1px solid black;
+}
+td input{
+     outline: none;
+     border: 0;
+     width: 60%;
+}
+h5 input{
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid black;
+    width: 40%;
+}
+
+.container
+
+/* #branch{
+    text-align: center;
+    margin-bottom: -4px;
+    font-size: large;
+    margin-left:45vw;
+   
+    
+} */
+branchselect{
+	margin-left:200px;
+}
+
+branch select{
+    text-transform: uppercase;
+    padding: 0 40px;
+    text-align: center;
+    background-color: 	#F5F5F5;
+    outline: 0;
+    border: 0;
+}
+/* h4 input{
+    border: 0;
+    outline: none;
+    
+} */
+
+/* h4 input[type="text"]{
+    text-align: center;
+    text-transform: uppercase;
+} */
+
+#rollno{
+    width: 50%;
+    text-align: center;
+}
+
+#btn {
+    width: 80px;
+    float: right;
+    margin-right: 20px;
+    
+}
+
+#myFile{
+    margin-left: 20px;
+}
+.adm input{
+    width: 100%;
+}
+
+
+.adm td{
+    word-wrap: break-word;
+}
+
+#photo td{
+    padding: 40px 10px;
+}
+
+/* #bottombtns{
+    /* padding-right: 30px; */
+    
+
+
+#bottombtns input{
+    padding:5px 50px;
+    
+}
+#save{
+    margin-right: 30px;
+    
+}

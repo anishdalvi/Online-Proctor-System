@@ -1,0 +1,86 @@
+{%load crispy_forms_tags %}
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/login/reg.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> -->
+</head>
+<body>
+ <form  method="POST"> 
+   {% csrf_token %}
+    <div class="form_wrapper">
+        <div class="form_container">
+          <div class="title_container">
+            <h2>Registration Form</h2>
+            <div class="line"></div>
+          </div>
+          
+          <div class="row clearfix">
+            <div class="">
+              <form>
+                <div class="row clearfix">
+                  <div class="col_half">
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                      <input type="text"  placeholder="First Name" name="firstname" />
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="col_half">
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                      <input type="text"  placeholder="Last Name" name="lastname" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="email"name="email" placeholder="Email"  required />
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="text"name="username" placeholder="Username"  required />
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input type="password" name="password1" placeholder="Password" id="pass1"required />
+                </div>
+               <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input type="password" name="password2" placeholder="Re-type Password" id="pass2" required />
+                </div> 
+                <br>
+                  
+                    <input class="button" type="submit" value="Register" />
+                   
+                
+              </form>
+
+              <div >
+                <p class="credit">Already have an account ? <a href="{%url 'login'%}">Login</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     <!--  {% comment %} ERROR MESSAGE DISPLAY {% endcomment %} -->
+      <div>
+        {%for message in messages%}
+        <p class="error-display"><h3>{{message}}</h3></p>
+       
+        {%endfor%}
+      
+      </div>
+
+     <!--  <script>
+        function myFunction() {
+          alert('{{message}}');
+        }
+        </script> -->
+      <!-- <p class="credit">Already have an account ? <a href="http://www.login1.html" class="text-danger">Login</a></p> -->
+   <!--    </form> -->
+      <!-- {% comment %} <script src="./regvalid.js"></script> {% endcomment %} -->
+</body>
+</html>

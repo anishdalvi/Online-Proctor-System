@@ -1,0 +1,312 @@
+
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Record</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/usersite/academicRecord.css">
+
+</head>
+<body>
+  <form action="submit_academic/" method="post"> 
+        {% csrf_token %}
+      <div class="container">
+
+          <h2 style="padding-top: 20px;"><u>ACADEMIC RECORD</u></h2>
+          <br> <br>
+          <ul style="margin-left: -2%;"><li><h4>Internal Assessment:</h4></li></ul>
+          <p style="margin-left: 1.5%;"><i>(Write the abbreviation of the subject with average marks of Internal Assessment 1 and 2)</i></p>
+      </div>
+
+      <br> 
+
+      <!-- Forms -->
+ 
+     
+      <div class="container">
+
+        <table>
+          <thead>
+            <tr>
+              <th style="width:20%">Subject with marks</th>
+              <th style="width:10%">1</th>
+              <th style="width:10%">2</th>
+              <th style="width:10%">3</th>
+              <th style="width:10%">4</th>
+              <th style="width:10%">5</th>
+              <th style="width:10%">6</th>
+            </tr>
+
+          </thead>
+          <tbody>
+            <tr>
+              <th>Semester I</th>
+              <td><input type="text" id=input1 name="s1s1" value="{{academic1.s1s1}}"></td>
+              <td><input type="text" id=input1 name="s1s2" value="{{academic1.s1s2}}"></td>
+              <td><input type="text" id=input1 name="s1s3" value="{{academic1.s1s3}}"> </td>
+              <td><input type="text" id=input1 name="s1s4" value="{{academic1.s1s4}}"></td>
+              <td><input type="text" id=input1 name="s1s5" value="{{academic1.s1s5}}"></td>
+              <td><input type="text" id=input1 name="s1s6" value="{{academic1.s1s6}}"></td>
+
+            </tr>
+            <tr>
+              <th>Semester II</th>
+              <td><input type="text" id=input1  name="s2s1"></td>
+              <td><input type="text" id=input1  name="s2s2"></td>
+              <td><input type="text" id=input1  name="s2s3"> </td>
+              <td><input type="text" id=input1  name="s2s4"></td>
+              <td><input type="text" id=input1  name="s2s5"></td>
+              <td><input type="text" id=input1  name="s2s6"></td>
+
+            </tr>
+            <tr>
+              <th>Semester III</th>
+              <td><input type="text" id=input1  name="s3s1"></td>
+              <td><input type="text" id=input1  name="s3s2"></td>
+              <td><input type="text" id=input1  name="s3s3"> </td>
+              <td><input type="text" id=input1  name="s3s4"></td>
+              <td><input type="text" id=input1  name="s3s5"></td>
+              <td><input type="text" id=input1  name="s3s6"></td>
+
+            </tr>
+            <tr>
+              <th>Semester IV</th>
+              <td><input type="text" id=input1  name="s4s1"></td>
+              <td><input type="text" id=input1  name="s4s2"></td>
+              <td><input type="text" id=input1  name="s4s3"> </td>
+              <td><input type="text" id=input1  name="s4s4"></td>
+              <td><input type="text" id=input1  name="s4s5"></td>
+              <td><input type="text" id=input1  name="s4s6"></td>
+
+            </tr>
+            <tr>
+              <th>Semester V</th>
+              <td><input type="text" id=input1  name="s5s1"></td>
+              <td><input type="text" id=input1  name="s5s2"></td>
+              <td><input type="text" id=input1  name="s5s3"> </td>
+              <td><input type="text" id=input1  name="s5s4"></td>
+              <td><input type="text" id=input1  name="s5s5"></td>
+              <td><input type="text" id=input1  name="s5s6"></td>
+
+            </tr>
+            <tr>
+              <th>Semester VI</th>
+              <td><input type="text" id=input1  name="s6s1"></td>
+              <td><input type="text" id=input1  name="s6s2"></td>
+              <td><input type="text" id=input1  name="s6s3"> </td>
+              <td><input type="text" id=input1  name="s6s4"></td>
+              <td><input type="text" id=input1  name="s6s5"></td>
+              <td><input type="text" id=input1  name="s6s6"></td>
+
+            </tr>
+            <tr>
+              <th>Semester VII</th>
+              <td><input type="text" id=input1  name="s7s1"></td>
+              <td><input type="text" id=input1  name="s7s2"></td>
+              <td><input type="text" id=input1  name="s7s3"> </td>
+              <td><input type="text" id=input1  name="s7s4"></td>
+              <td><input type="text" id=input1  name="s7s5"></td>
+              <td><input type="text" id=input1  name="s7s6"></td>
+
+            </tr>
+            <tr>
+              <th>Semester VIII</th>
+              <td><input type="text" id=input1  name="s8s1"></td>
+              <td><input type="text" id=input1  name="s8s2"></td>
+              <td><input type="text" id=input1  name="s8s3"> </td>
+              <td><input type="text" id=input1  name="s8s4"></td>
+              <td><input type="text" id=input1  name="s8s5"></td>
+              <td><input type="text" id=input1  name="s8s6"></td>
+
+            </tr>
+        </table>
+
+      </div>
+
+      <br>  <!-- End Semester exam -->
+
+      <div class="container">
+
+        <br>
+        <ul style="margin-left: -2%;"><li><h4>End Semester exam:</h4></li></ul>
+        <p style="margin-left: 1.5%;"><i>(To be filled by the proctor after verifying the mark sheet)</i></p>
+      </div>
+
+
+      <div class="container">
+        <table class="container">
+          <thead>
+            <tr>
+              <th style="width:10%; border-bottom: 0;" >Year</th>
+              <th style="width:10%;border-bottom: 0;">Year of Passing</th>
+              <th style="width:10%" colspan="2">CGPI/Rank(if any)</th>
+              
+              <th style="width:10%" colspan="2">Failure Subjects(if any)</th>
+              <th style="width:10%" colspan="2">Critical Subjects(if any)</th>
+                
+  
+            </tr>
+            <tr>
+              <th style="width:10%;border-top:0" ></th>
+              <th style="width:10%;border-top:0"></th>
+              <th style="width:10%">Odd Sem</th>
+              <th style="width:10%">Even Sem</th>
+              <th style="width:10%">Odd Sem</th>
+              <th style="width:10%">Even Sem</th>
+              <th style="width:10%">Odd Sem</th>
+              <th style="width:10%">Even Sem</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th>FE</th>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1> </td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+            </tr>
+            <tr>
+              <th>SE</th>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1> </td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+            </tr>
+            <tr>
+              <th>TE</th>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1> </td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+            </tr>
+            <tr>
+              <th>BE</th>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1> </td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+            </tr>
+          </tbody>
+  
+        </table>
+      </div>
+
+      <br> <!-- Attendance Record -->
+
+      <div class="container">
+
+        <br>
+        <ul style="margin-left: -2%;"><li><h4>Attendance Record:</h4></li></ul>
+        <p style="margin-left: 1.5%;"><i>(Mention the abbreviation of subjects (if any) in which the mentee is defaulter)</i></p>
+      </div>
+
+      <div class="container">
+
+        <table>
+          <thead>
+            <tr>
+              <th style="width:20%">Semester</th>
+              <th style="width:10%">I</th>
+              <th style="width:10%">II</th>
+              <th style="width:10%">III</th>
+              <th style="width:10%">IV</th>
+              <th style="width:10%">V</th>
+              <th style="width:10%">VI</th>
+              <th style="width:10%">VII</th>
+              <th style="width:10%">VIII</th>
+            </tr>
+
+          </thead>
+          <tbody>
+            <tr>
+              <th>Defaulter List 1</th>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1> </td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+
+            </tr>
+            <tr>
+              <th>Defaulter List 2</th>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1> </td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+
+
+            </tr>
+            <tr>
+              <th>Defaulter List 3</th>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1> </td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+              <td><input type="text" id=input1></td>
+
+
+            </tr>
+           
+        </table>
+    </div>
+ 
+     <div class="container" id="bottombtns">
+        <br> <br>
+        <a href="{%url 'achievementdetails'%}">
+            <input class="btn btn-primary submit-btn" type="submit" value="Next" style="float: right; padding-left:5px 50px; width:136px;height:36px"  min="0" max="500000000000">  
+        </a>
+        <a href="">
+            <input class="btn btn-primary submit-btn" type="submit" value="Save" style="float: right; padding:5px 50px;margin-right:30px" id="save" >  
+        </a> 
+        </a>
+         <a href="{%url 'personalinfo'%}">
+          <input class="btn btn-primary submit-btn" type="button" value="Back" style="width:127px" >  
+      </a>  
+       
+    </div>
+     
+    <div style="padding-bottom: 100px;">
+        
+    </div>   
+      
+
+
+      <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  </form>
+  
+</body>
+</html>

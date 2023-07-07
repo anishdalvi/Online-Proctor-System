@@ -1,0 +1,171 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+     font-size: 14px;
+    /*background: #f2f2f2; */
+}
+.studlog{
+    margin-left: 110px ;
+ }
+ .adminhead{
+     margin-left: 15px;
+ }
+
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    width:100%;
+    background-color: #B0BEC5;
+    background-repeat: no-repeat
+}
+
+
+.card0 {
+    box-shadow: 0px 4px 8px 0px #757575;
+    border-radius: 0px
+}
+
+.card2 {
+    margin: 0px 45px;
+    margin-left: -11px;
+}
+
+#logo{
+    width: 100%;
+    height: 20%;
+    
+}
+/* h3{
+    text-transform: uppercase;
+} */
+
+.image {
+    width: 100%;
+    height: 100%;
+    padding-left: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: fill;
+    position: relative;
+  
+}
+
+#right{
+    padding-left: -20%;
+}
+
+.border-line {
+    border-right: 1px solid #EEEEEE
+}
+
+
+
+.line {
+    height: 1px;
+    width: 50%;
+    background-color: #E0E0E0;
+    margin-top: 10px
+}
+
+
+
+/* .text-sm {
+    font-size: 14px !important
+} */
+
+::placeholder {
+    color: #BDBDBD;
+    opacity: 1;
+    font-weight: 300
+}
+
+:-ms-input-placeholder {
+    color: #BDBDBD;
+    font-weight: 300
+}
+
+::-ms-input-placeholder {
+    color: #BDBDBD;
+    font-weight: 300
+}
+
+input,
+textarea {
+    padding: 10px 12px 10px 12px;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #304FFE;
+    outline-width: 0
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+button{
+    border: none;
+}
+
+a {
+    color: inherit;
+    cursor: pointer
+}
+
+.btn-blue {
+    /* background-color: #1A237E; */
+    background-color: #304FFE;
+    box-shadow: none;
+    width: 150px;
+    color:  #ffffff;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.btn-blue:hover {
+    background-color: #0a0ca5;
+    cursor: pointer
+}
+
+.bg-blue {
+    color: #fff;
+    background-color: #1A237E;
+    
+}
+
+
+@media screen and (max-width: 995px) {
+    
+
+    .image {
+        width: 400px;
+        height: 320px
+    }
+
+    .border-line {
+        border-right: none
+    }
+    
+    
+    .card2 {
+        border-top: 1px solid #EEEEEE !important;
+        margin: 0px 15px;
+        margin-top: -80px;
+    }
+}

@@ -1,0 +1,38 @@
+*{
+    font-family: 'Poppins', sans-serif;
+  }
+  body,input,textarea,select{
+    background-color: 	#F5F5F5; /* whitesmoke */
+
+  
+  }
+  table{
+    border-collapse: collapse;
+    
+  }
+  
+  th,td{
+    border: 0.2px solid black;
+    padding: 10px 10px;
+    text-align: center;
+  }
+  
+  
+  
+  #input1{
+    height: 30px;
+    width: 100px;
+    border: 0;
+  }
+.buttons{
+    margin-top: 2vh;
+    margin-left: 35vw;
+}
+.btn{
+    margin-left: 0.9vw;
+}
+
+
+#bottombtns{
+  padding-right: 30px;
+}

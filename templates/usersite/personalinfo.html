@@ -1,0 +1,334 @@
+
+<DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Details</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/usersite/personalinfo.css">
+
+</head>
+<body>
+
+<form action="submit_personalinfo/" method="post">
+		{% csrf_token %}
+		<div class="container">
+
+			<h2 style="padding-top: 20px;">
+				<u>DETAILS</u>
+			</h2>
+			<br> <br>
+			<ul style="margin-left: -2%;">
+				<li><h4>Personal Information:</h4></li>
+			</ul>
+	
+		</div>
+	
+		<br>
+	
+		<!-- Form 1 -->
+		<!-- {% comment %} <form action="./Personal.jsp" method="post"> {% endcomment %} -->
+			<div class="container">
+	
+				<table>
+	
+					<tbody>
+	
+						<tr>
+							<td>Date of Birth: <input type="text" value="{{personalinfo1.dob}}" class="input"
+								name="dob" placeholder="dd/mm/yyyy"></td>
+							<td>Birth Place: <input type="text" value="{{personalinfo1.birthplace}}" name="birthplace" ></td>
+						</tr>
+	
+						<tr>
+							<td>Mother tongue: <input type="text" name="mothertongue" value="{{personalinfo1.mothertongue}}"></td>
+							<td>Caste/Religion: <input type="text" name="caste" value="{{personalinfo1.caste}}"></td>
+						</tr>
+	
+						<tr>
+							<td colspan="2">Name of Parent/Local Guardian: <input type="text" id="input2" name="nameofparent" value="{{personalinfo1.nameofparent}}">
+							</td>
+						</tr>
+	
+						<tr>
+							<td colspan="2">Permanent Address: <input type="text"
+								id="input2" name="address" value="{{personalinfo1.address}}">
+							</td>
+						</tr>
+	
+						<tr>
+							<td>Mobile Number: <input length=10 type="number" name="mobnumber" value="{{personalinfo1.mobnumber}}"></td>
+							<td>Email ID: <input type="email" name="emailid" value="{{personalinfo1.emailid}}"></td>
+						</tr>
+	
+						<tr>
+							<td>Blood group: <input type="text" name="bloodgroup" value="{{personalinfo1.bloodgroup}}"></td>
+							<td>Any specific disease/disability: <input type="text" value="{{personalinfo1.disease}}" name="disease" onkeypress='validate(event)'></td>
+						</tr>
+	
+						<tr>
+							<td colspan="2">Signature: <input type="file" id="myFile"
+								name="student_signature"> <input type="submit" value="Upload"
+								class="btn btn-primary">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+	
+			</div>
+			<br> <br>
+	
+			<!-- Form 2 -->
+	
+			<div class="container">
+	
+	
+				<ul style="margin-left: -2%;">
+					<li><h4>Family Information:</h4></li>
+				</ul>
+	
+			</div>
+	
+			<br>
+	
+			<div class="container">
+	
+				<table class="fami-info">
+					<thead>
+						<tr>
+							<th>Detail</th>
+							<th>Father</th>
+							<th>Mother</th>
+						</tr>
+					</thead>
+	
+					<tbody>
+						<tr>
+							<td>Name</td>
+							<td><input type="text" name="fathername" value="{{personalinfo1.fathername}}" ></td>
+							<td><input type="text" name="mothername" value="{{personalinfo1.mothername}}" ></td>
+						</tr>
+						<tr>
+							<td>Age</td>
+							<td><input type="number" name="fatherage" onkeypress='validate(event)' value="{{personalinfo1.fatherage}}"></td>
+							<td><input type="number" name="motherage" onkeypress='validate(event)' value="{{personalinfo1.motherage}}"></td>
+						</tr>
+	
+						<tr>
+							<td>Photograph</td>
+							<td><input type="file" id="myFile"> <br> <br>
+								<input type="submit" value="Upload" class="btn btn-primary"
+								id="btn"></td>
+							<td><input type="file" id="myFile"> <br> <br>
+								<input type="submit" value="Upload" class="btn btn-primary"
+								id="btn"></td>
+						</tr>
+	
+						<tr>
+							<td>Address</td>
+							<td><textarea name="Faddress" value="{{personalinfo1.Faddress}}"></textarea></td>
+							<td><textarea name="Maddress" value="{{personalinfo1.Maddress}}"></textarea></td>
+						</tr>
+	
+						<tr>
+							<td>Contact Number</td>
+							<td><input type="number" name="Fnumber" onkeypress='validate(event)' value="{{personalinfo1.Fnumber}}"></td>
+							<td><input type="number" name="Mnumber" onkeypress='validate(event)' value="{{personalinfo1.Mnumber}}"></td>
+						</tr>
+	
+						<tr>
+							<td>Email ID</td>
+							<td><input type="email" name="Fmail"></td>
+							<td><input type="email" name="Mmail"></td>
+						</tr>
+	
+						<tr>
+							<td>Qualification</td>
+							<td><input type="text" name="Fqualify" value="{{personalinfo1.Fqualify}}"></td>
+							<td><input type="text" name="Mqualify" value="{{personalinfo1.Mqualify}}"></td>
+						</tr>
+	
+						<tr>
+							<td>Occupation</td>
+							<td><input type="text" name="Foccupation" value="{{personalinfo1.Foccupation}}" ></td>
+							<td><input type="text" name="Moccupation" value="{{personalinfo1.Moccupation}}" ></td>
+						</tr>
+	
+						<tr>
+							<td>Signature</td>
+							<td><input type="file" id="myFile"> <br> <br>
+								<input type="submit" value="Upload" class="btn btn-primary"
+								id="btn"></td>
+							<td><input type="file" id="myFile"> <br> <br>
+								<input type="submit" value="Upload" class="btn btn-primary"
+								id="btn"></td>
+						</tr>
+	
+	
+					</tbody>
+				</table>
+	
+			</div>
+			<br> <br>
+	
+			<!-- Form 3 -->
+	
+	
+	
+			<br>
+	
+			<div class="container">
+	
+				<table class="fami-info">
+					<thead>
+						<tr>
+							<th>Detail</th>
+							<th>Sibling I</th>
+							<th>Sibling II</th>
+							<th>Sibling III</th>
+						</tr>
+					</thead>
+	
+					<tbody>
+						<tr>
+							<td>Name</td>
+							<td><input type="text" name="S1name" value="{{personalinfo1.S1name}}" ></td>
+							<td><input type="text" name="S2name" value="{{personalinfo1.S2name}}" ></td>
+							<td><input type="text" name="S3name" value="{{personalinfo1.S3name}}" ></td>
+						</tr>
+	
+						<tr>
+							<td>Gender</td>
+							<td><select name="S1gender" id="">
+									<option value="default" selected>..</option>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+									<option value="Other">Other</option>
+							</select></td>
+	
+							<td><select name="S2gender" id="">
+									<option value="default" selected>..</option>
+									<option value="male" >Male</option>
+									<option value="female">Female</option>
+									<option value="Other">Other</option>
+							</select></td>
+	
+							<td><select name="S3gender" id="">
+									<option value="default" selected>..</option>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+									<option value="Other">Other</option>
+							</select></td>
+						</tr>
+	
+						<tr>
+							<td>Age</td>
+							<td><input type="number" name="S1age" value="{{personalinfo1.S1age}}" onkeypress='validate(event)'></td>
+							<td><input type="number" name="S2age" value="{{personalinfo1.S2age}}" onkeypress='validate(event)'></td>
+							<td><input type="number" name="S3age" value="{{personalinfo1.S3age}}" onkeypress='validate(event)'></td>
+						</tr>
+	
+						<tr>
+							<td>Contact Number</td>
+							<td><input type="number" name="S1number" value="{{personalinfo1.S1number}}" onkeypress='validate(event)'></td>
+							<td><input type="number" name="S2number"  value="{{personalinfo1.S2number}}" onkeypress='validate(event)'></td>
+							<td><input type="number" name="S3number" value="{{personalinfo1.S3number}}" onkeypress='validate(event)'></td>
+						</tr>
+	
+	
+						<tr>
+							<td>Qualification</td>
+							<td><input type="text" name="S1qualify" value="{{personalinfo1.S1qualify}}"></td>
+							<td><input type="text" name="S2qualify" value="{{personalinfo1.S2qualify}}" ></td>
+							<td><input type="text" name="S3qualify" value="{{personalinfo1.S3qualify}}" ></td>
+						</tr>
+	
+						<tr>
+							<td>Occupation</td>
+							<td><input type="text" name="S1occupation" value="{{personalinfo1.S1occupation}}"></td>
+							<td><input type="text" name="S2occupation" value="{{personalinfo1.S2occupation}}" ></td>
+							<td><input type="text" name="S3occupation" value="{{personalinfo1.S3occupation}}" ></td>
+						</tr>
+	
+	
+	
+	
+					</tbody>
+				</table>
+	
+				<br>
+	
+				<h5>
+					Approximate annual family income: <input type="number" name="income"  value="{{personalinfo.income}}" placeholder="Enter your income" onkeypress='validate(event)'>
+				</h5>
+	
+			</div>
+	
+	
+	
+			<div class="container" id="bottombtns">
+				<br> <br>
+				<!-- <a href="academicRecord.html"> </a>  -->
+	
+	 <a href="{%url 'academic'%}">
+				<input class="btn btn-primary submit-btn" type="submit" value="Next" style="float: right;padding-left:5px 50px; width:136px;height:36px"  min="0" max="500000000000" >  
+			</a>
+			<a href="{%url 'personalinfo'%}">
+				<input class="btn btn-primary submit-btn" type="submit" value="save" style="float:right; padding:5px 50px;margin-right:30px" id="save" >  
+			</a> 
+				</a>
+	<a href="{%url 'admission'%}">
+			  <input class="btn btn-primary submit-btn" type="button" value="Back" style="width:127px;float:" >  
+		  </a>  
+			</div>
+	
+			<div style="padding-bottom: 100px;"></div>
+	
+			{% if form.errors %}
+			<ul>
+				{% for key,value in form.errors.items %} 
+				<li>{{ key|escape }} : {{ value|escape }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %} 
+
+
+
+
+</form>
+
+	<!-- {% comment %} </form> {% endcomment %} -->
+
+
+
+	<!-- Optional JavaScript; choose one of the two! -->
+
+	<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		crossorigin="anonymous"></script>
+
+<!-- <script src=" ./Proctor/src/main/webapp/script.js"></script> -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"
+	integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	{% comment %} <script src="(% static 'js/usersite/keychecker.js' %}"></script> {% endcomment %}
+</body>
+</html>

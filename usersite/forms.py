@@ -1,0 +1,22 @@
+from django.forms import ModelForm
+from usersite.models import admission, personalinfo , academic
+from django.contrib.auth.models import User
+
+
+class admissionForm(ModelForm):
+    class Meta:
+        model = admission
+        fields = ['procname','surname','name','midname','student_image','rollsem1','rollsem2','rollsem3','rollsem4','rollsem5','rollsem6','rollsem7','rollsem8','year','category','hsc','cet','jee','diploma']
+
+
+
+class personalinfoForm(ModelForm):
+    class Meta:
+        model = personalinfo
+        fields = ['dob','birthplace','mothertongue','caste','nameofparent','address','mobnumber','emailid','bloodgroup','disease','fathername','mothername','fatherage','motherage','Faddress','Maddress','Fnumber','Mnumber','Fmail','Mmail','Fqualify','Mqualify','Foccupation','Moccupation','S1name','S2name','S3name','S1age','S2age','S3age', 'S1number','S2number','S3number','S1qualify','S2qualify','S3qualify','S1occupation','S2occupation','S3occupation','income']
+
+
+class academicForm(ModelForm):
+    class Meta:
+        model = academic
+        fields = ['s1s1','s1s2','s1s3','s1s4','s1s5','s1s6']
