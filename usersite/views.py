@@ -117,6 +117,7 @@ def academic(request):
   if request.method == 'POST':
     if request.user.is_authenticated:
       print("POST request received!")
+      print(request)
       user = request.user
       print(user , "at Academic Page")
       academic1 = academic2.objects.filter(user=request.user).first()
@@ -138,7 +139,13 @@ def academic(request):
   else:
     print("else method not post")
     academic1 = academic2.objects.filter(user=request.user).first()
-    print(academic1)
+    semester1 = semester2.objects.filter(user=request.user).first()
+
+    current_sem = semester1.current_sem if semester1 else None
+    previous_semesters = range(1, current_sem)
+
+    number_subject = 6;
+    #print(current_sem)
     if not academic1:
       print("if not academic1")
       form = academicForm()
@@ -146,7 +153,7 @@ def academic(request):
     else:
       form = academicForm(instance=academic1)
       print("Hello else Academic")
-      return render(request, 'academic.html', {'form': form, 'academic1': academic1})
+      return render(request, 'academic.html', {'form': form, 'academic1': academic1, 'current_sem': current_sem, 'previous_semesters': previous_semesters, 'number_subject': number_subject})
 
     return render(request, 'academic.html', context={'form': form, 'academic1': academic1})
 

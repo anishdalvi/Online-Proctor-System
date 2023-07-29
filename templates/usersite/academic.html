@@ -1,3 +1,4 @@
+{% load custom_filters %}
 
 <DOCTYPE html>
 <html lang="en">
@@ -62,9 +63,43 @@
       </div>
       
 
-      <div class="container">
+      <div class="container" style="margin-top: 20px;">
+        <h4> The Current Semester is {{current_sem}}  </h4>
+
+        <table>
+          <thead>
+            <tr>
+              
+                <th style="width:20%">Subject with marks</th>
+                <th style="width:10%">1</th>
+                <th style="width:10%">2</th>
+                <th style="width:10%">3</th>
+                <th style="width:10%">4</th>
+                <th style="width:10%">5</th>
+                <th style="width:10%">6</th>
+              
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for sem in current_sem|get_range %}
+            <tr>
+                <th>Semester {{sem}} </th>
+
+                {% for sub in number_subject|get_sub_range %}
+                <td><input type="text" id=input1 name="s1s1" value={{sub}}></td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <div style="margin-top: 20px;">
+        </div>
+
         <label for="subject_name">Subject Name</label>
         <input type="text" placeholder="Subject Name">
+         <br>
         <label for="marks">Marks</label>
         <input type="text" placeholder="Marks">
       </div>
