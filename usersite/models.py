@@ -44,7 +44,7 @@ class admission(models.Model):
     rollsem8 = models.CharField(max_length=3, blank=True, null=True)
     
     year = models.CharField(max_length=45, blank=True, null=True)
-    category = models.CharField(max_length=45, blank=True, null=True)
+    category = models.CharField(max_length=45, blank=True, null=True, default='')
     hsc = models.CharField(max_length=45, blank=True, null=True)
     cet = models.CharField(max_length=45, blank=True, null=True)
     jee = models.CharField(max_length=45, blank=True, null=True)

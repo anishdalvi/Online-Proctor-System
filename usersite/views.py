@@ -83,8 +83,7 @@ from django.contrib.auth.models import User
 
 @login_required
 def admission(request):
-
-  if  request.user.is_authenticated:
+  """ if  request.user.is_authenticated:
 
       user = request.user
       print(user)
@@ -101,15 +100,51 @@ def admission(request):
 
   else:
 
-    return redirect('unauthorised')
+    return redirect('unauthorised') """
+  if request.method == 'POST':
+    if  request.user.is_authenticated:
 
-@login_required
+        user = request.user
+        print(user)
+        admission1 = admission2.objects.filter(user=request.user).first()
+        #form = admissionForm()
+        
+        form = admissionForm(request.POST, instance = admission1)
+        if form.is_valid():
+          print(form.cleaned_data)
+          admission = form.save(commit=False)
+          admission.user = user
+          admission.save()
+
+
+        return redirect("personalinfo")
+    
+
+        #admission1 = admission2.objects.get(user=2)
+        
+
+  else:
+        admission1=admission2.objects.filter(user=request.user).first()
+        #print(admission2)
+        if not admission1:
+              form = admissionForm()
+
+        # adm_details=admission_details.objects.filter(user=request.user.id)
+        else:
+          form = admissionForm(instance=admission1)
+          print("Hello else")
+          return render(request,'admission.html',{'form':form,'admission1':admission1})
+        
+  return render(request,'admission.html', context={'form': form , 'admission1': admission1})
+
+
+""" @login_required
 def submit_admission(request):
 
     if request.user.is_authenticated:
 
       user = request.user
-      print(user)
+      #print(user)
       form = admissionForm(request.POST)
       if form.is_valid():
         print(form.cleaned_data)
@@ -120,7 +155,7 @@ def submit_admission(request):
 
         return redirect("personalinfo")
       else:
-        return render(request,'admission.html',context = {'form': form})
+        return render(request,'admission.html',context = {'form': form}) """
 
 
 
@@ -197,13 +232,14 @@ def submit_personalinfo(request):
         print(3) """
 
 
+""" This is till Sem 4 """
 
-@login_required
+""" @login_required
 def personalinfo(request):
   if  request.user.is_authenticated:
 
       user = request.user
-      print(user)
+      #print(user)
       form = personalinfoForm()
       try:
         print(1)
@@ -222,12 +258,12 @@ def submit_personalinfo(request):
     if request.user.is_authenticated:
 
       user = request.user
-      print("submit",user)
+      print(user,"submitted personalinfo")
       form = personalinfoForm(request.POST)
       print("after form",user)
       if form.is_valid():
         print('Form Valid')
-        print(form.cleaned_data)
+        #print(form.cleaned_data)
         personalinfo = form.save(commit=False)
         personalinfo.user = user
         personalinfo.save()
@@ -237,23 +273,46 @@ def submit_personalinfo(request):
       else:
         
         print("Form skipped")
-        return render(request,'personalinfo.html',context = {'form': form})
+        return render(request,'personalinfo.html',context = {'form': form}) """
 
 
+""" This is till Sem 4 end """
 
 
+@login_required
+def personalinfo(request):
+  if request.method == 'POST':
+    if request.user.is_authenticated:
 
+        user = request.user
+        personalinfo1 = personalinfo2.objects.filter(user=request.user).first()
+        #print(user)
+        form = personalinfoForm(request.POST, instance=personalinfo1)
 
+        if form.is_valid():
+          personalinfo1 = form.save(commit=False)
+          personalinfo1.user = user
+          personalinfo1.save()
+        
+        return redirect("academic")
+        #return render(request, 'personalinfo.html', context={'form': form, 'personalinfo1': personalinfo1})
 
+    else:
+        return redirect('unauthorised')
 
+  else:
+      personalinfo1 = personalinfo2.objects.filter(user=request.user).first()
+       #print(admission2)
+      if not personalinfo1:
+          form = personalinfoForm()
 
+        # adm_details=admission_details.objects.filter(user=request.user.id)
+      else:
+        form = personalinfoForm(instance=personalinfo1)
+        print("Hello else")
+        return render(request, 'personalinfo.html', {'form': form, 'personalinfo1': personalinfo1})
 
-
-
-
-
-
-
+  return render(request, 'personalinfo.html', context={'form': form, 'personalinfo1': personalinfo1})
 
 
 
@@ -263,7 +322,7 @@ def academic(request):
   if  request.user.is_authenticated:
 
       user = request.user
-      print(user)
+      print(user , "at Academic Page")
       form = academicForm()
       try:
         academic1 = academic2.objects.filter(user=user).latest('pk')
@@ -280,10 +339,10 @@ def submit_academic(request):
     if request.user.is_authenticated:
 
       user = request.user
-      print(user)
+      print(user, "Submitted Academic")
       form = academicForm(request.POST)
       if form.is_valid():
-        print(form.cleaned_data)
+        #print(form.cleaned_data)
         academic = form.save(commit=False)
         academic.user = user
         academic.save()
