@@ -67,18 +67,18 @@
 	
 						<tr>
 							<td colspan="2">Permanent Address: <input type="text"
-								id="input2" name="address" value="{{personalinfo1.address}}">
+								id="input2" name="address" value="{% if personalinfo1.address %}{{ personalinfo1.address }}{% else %} {% endif %}">
 							</td>
 						</tr>
 	
 						<tr>
 							<td>Mobile Number: <input length=10 type="number" name="mobnumber" value="{{personalinfo1.mobnumber}}"></td>
-							<td>Email ID: <input type="email" name="emailid" value="{{personalinfo1.emailid}}"></td>
+							<td>Email ID: <input type="email" name="emailid" value="{% if personalinfo1.emailid %}{{ personalinfo1.emailid }}{% else %} {% endif %}"></td>
 						</tr>
 	
 						<tr>
-							<td>Blood group: <input type="text" name="bloodgroup" value="{{personalinfo1.bloodgroup}}"></td>
-							<td>Any specific disease/disability: <input type="text" value="{{personalinfo1.disease}}" name="disease" onkeypress='validate(event)'></td>
+							<td>Blood group: <input type="text" name="bloodgroup" value="{% if personalinfo1.bloodgroup %}{{ personalinfo1.bloodgroup }}{% else %} {% endif %}"></td>
+							<td>Any specific disease/disability: <input type="text" value="{% if personalinfo1.disease %}{{ personalinfo1.disease }}{% else %} {% endif %}" name="disease" onkeypress='validate(event)'></td>
 						</tr>
 	
 						<tr>
@@ -120,8 +120,8 @@
 					<tbody>
 						<tr>
 							<td>Name</td>
-							<td><input type="text" name="fathername" value="{{personalinfo1.fathername}}" ></td>
-							<td><input type="text" name="mothername" value="{{personalinfo1.mothername}}" ></td>
+							<td><input type="text" name="fathername" value="{% if personalinfo1.fathername %}{{ personalinfo1.fathername }}{% else %} {% endif %}" ></td>
+							<td><input type="text" name="mothername" value="{% if personalinfo1.mothername %}{{ personalinfo1.mothername }}{% else %} {% endif %}" ></td>
 						</tr>
 						<tr>
 							<td>Age</td>
