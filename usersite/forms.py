@@ -20,3 +20,10 @@ class academicForm(ModelForm):
     class Meta:
         model = academic
         fields = ['s1s1','s1s2','s1s3','s1s4','s1s5','s1s6']
+
+
+class SubjectForm(forms.ModelForm):
+    class Meta:
+        model = Subject
+        # Include other fields from the model if needed
+        fields = ['subject_name', 'marks', ...]

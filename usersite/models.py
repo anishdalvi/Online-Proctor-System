@@ -115,3 +115,14 @@ class academic(models.Model):
     s1s4 = models.IntegerField()
     s1s5 = models.IntegerField()
     s1s6 = models.IntegerField()
+
+
+class Semester(models.Model):
+    semester_number = models.PositiveIntegerField(unique=True)
+    # Add other fields like semester name, start date, end date, etc.
+
+
+class Subject(models.Model):
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
+    subject_name = models.CharField(max_length=50)
+    # Add other fields related to the subject, such as marks, credits, etc.
