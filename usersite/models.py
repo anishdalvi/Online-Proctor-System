@@ -48,7 +48,7 @@ class admission(models.Model):
     hsc = models.CharField(max_length=45, blank=True, null=True)
     cet = models.CharField(max_length=45, blank=True, null=True)
     jee = models.CharField(max_length=45, blank=True, null=True)
-    diploma = models.CharField(max_length=45, blank=True, null=True)
+    diploma = models.CharField(max_length=45, blank=True, null=True, default='')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 

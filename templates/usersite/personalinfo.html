@@ -38,7 +38,9 @@
 		</div>
 	
 		<br>
-	
+		<!-- 
+			{% if personalinfo1.diploma %}{{ personalinfo1.diploma }}{% else %} {% endif %}
+		 -->
 		<!-- Form 1 -->
 		<!-- {% comment %} <form action="./Personal.jsp" method="post"> {% endcomment %} -->
 			<div class="container">
@@ -48,18 +50,18 @@
 					<tbody>
 	
 						<tr>
-							<td>Date of Birth: <input type="text" value="{{personalinfo1.dob}}" class="input"
+							<td>Date of Birth: <input type="text" value="{% if personalinfo1.dob %}{{ personalinfo1.dob }}{% else %} {% endif %}" class="input"
 								name="dob" placeholder="dd/mm/yyyy"></td>
-							<td>Birth Place: <input type="text" value="{{personalinfo1.birthplace}}" name="birthplace" ></td>
+							<td>Birth Place: <input type="text" value="{% if personalinfo1.birthplace %}{{ personalinfo1.birthplace }}{% else %} {% endif %}" name="birthplace" ></td>
 						</tr>
 	
 						<tr>
-							<td>Mother tongue: <input type="text" name="mothertongue" value="{{personalinfo1.mothertongue}}"></td>
-							<td>Caste/Religion: <input type="text" name="caste" value="{{personalinfo1.caste}}"></td>
+							<td>Mother tongue: <input type="text" name="mothertongue" value="{% if personalinfo1.mothertongue %}{{ personalinfo1.mothertongue }}{% else %} {% endif %}"></td>
+							<td>Caste/Religion: <input type="text" name="caste" value="{% if personalinfo1.caste %}{{ personalinfo1.caste }}{% else %} {% endif %}"></td>
 						</tr>
 	
 						<tr>
-							<td colspan="2">Name of Parent/Local Guardian: <input type="text" id="input2" name="nameofparent" value="{{personalinfo1.nameofparent}}">
+							<td colspan="2">Name of Parent/Local Guardian: <input type="text" id="input2" name="nameofparent" value="{% if personalinfo1.nameofparent %}{{ personalinfo1.nameofparent }}{% else %} {% endif %}">
 							</td>
 						</tr>
 	
@@ -299,7 +301,7 @@
 			</a> 
 				</a>
 	<a href="{%url 'admission'%}">
-			  <input class="btn btn-primary submit-btn" type="button" value="Back" style="width:127px;float:" >  
+			  <input class="btn btn-primary submit-btn" type="button" value="Back" style="width:127px;float:left" >  
 		  </a>  
 			</div>
 	

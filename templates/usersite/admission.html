@@ -86,11 +86,11 @@
         <table>
             <tbody>
                 <tr>
-                    <td colspan="3">Surname : <input id="surname" type="text" value="{{admission1.surname}}" name="surname"></td>
+                    <td colspan="3">Surname : <input id="surname" type="text" value="{% if admission1.surname %}{{ admission1.surname }}{% else %} {% endif %}" name="surname"></td>
                     
-                    <td colspan="3">First Name : <input id="name" type="text" value="{{admission1.name}}" name="name"></td>
+                    <td colspan="3">First Name : <input id="name" type="text" value="{% if admission1.name %}{{ admission1.name }}{% else %} {% endif %}" name="name"></td>
                     
-                    <td colspan="3">Middle Name : <input id="midname" type="text" value="{{admission1.midname}}" name="midname"></td>
+                    <td colspan="3">Middle Name : <input id="midname" type="text" value="{% if admission1.midname %}{{ admission1.midname }}{% else %} {% endif %}" name="midname"></td>
 
                     
                 </tr>
@@ -141,20 +141,20 @@
                 
                 
                 <td>Year of Admission</td>
-                <td><input type="text" value="{{admission1.year}}" name="year" onkeypress='validate(event)'></td>
+                <td><input type="text" value="{% if admission1.year %}{{ admission1.year }}{% else %} {% endif %}" name="year" onkeypress='validate(event)'></td>
                 <td>Category of Admission</td>
-                <td><input type="text" value="{{admission1.category}}" name="category" ></td>
+                <td><input type="text" value="{% if admission1.category %}{{ admission1.category }}{% else %} {% endif %}" name="category" ></td>
                 <td>HSC (%)</td>
-                <td><input type="text" value="{{admission1.hsc}}" name="hsc" onkeypress='validate(event)'></td>
+                <td><input type="text" value="{% if admission1.hsc %}{{ admission1.hsc }}{% else %} {% endif %}" name="hsc" onkeypress='validate(event)'></td>
             </tr>
 
             <tr>
                 <td>CET Score</td>
-                <td><input type="text" value="{{admission1.cet}}" name="cet" onkeypress='validate(event)'></td>
+                <td><input type="text" value="{% if admission1.cet %}{{ admission1.cet }}{% else %} {% endif %}" name="cet" onkeypress='validate(event)'></td>
                 <td>JEE Score</td>
-                <td><input type="text" value="{{admission1.jee}}" name="jee"onkeypress='validate(event)'></td>
+                <td><input type="text" value="{% if admission1.jee %}{{ admission1.jee }}{% else %} {% endif %}" name="jee"onkeypress='validate(event)'></td>
                 <td>Diploma (%)</td>
-                <td><input type="text" value="{{admission1.diploma}}"  name="diploma" onkeypress='validate(event)'></td>
+                <td><input type="text" value="{% if admission1.diploma %}{{ admission1.diploma }}{% else %} {% endif %}"  name="diploma" onkeypress='validate(event)'></td>
 
             </tr>
         </table>
