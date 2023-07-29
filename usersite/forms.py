@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from usersite.models import admission, personalinfo , academic
+from usersite.models import admission, personalinfo , academic, Subject
 from django.contrib.auth.models import User
 
 
@@ -22,8 +22,8 @@ class academicForm(ModelForm):
         fields = ['s1s1','s1s2','s1s3','s1s4','s1s5','s1s6']
 
 
-class SubjectForm(forms.ModelForm):
+""" class SubjectForm(ModelForm):
     class Meta:
         model = Subject
         # Include other fields from the model if needed
-        fields = ['subject_name', 'marks', ...]
+        fields = ['subject_name', 'marks'] """
