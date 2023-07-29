@@ -118,7 +118,10 @@ class academic(models.Model):
 
 
 class Semester(models.Model):
-    semester_number = models.PositiveIntegerField(unique=True)
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    current_year = models.PositiveIntegerField(blank=True,null=True)
+    current_sem = models.PositiveIntegerField(blank=True,null=True)
     # Add other fields like semester name, start date, end date, etc.
 
 

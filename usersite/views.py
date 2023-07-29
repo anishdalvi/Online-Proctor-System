@@ -10,8 +10,9 @@ from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
-from usersite.forms import admissionForm,personalinfoForm,academicForm
+from usersite.forms import admissionForm,personalinfoForm,academicForm, currentSemForm, SubjectForm
 from usersite.models import admission as admission2
+from usersite.models import Semester as semester2
 from usersite.models import personalinfo as personalinfo2
 from usersite.models import academic as academic2
 from django.contrib.auth.models import User
@@ -33,35 +34,43 @@ def admission(request):
         user = request.user
         print(user)
         admission1 = admission2.objects.filter(user=request.user).first()
-       
+        semester1 = semester2.objects.filter(user=request.user).first()
         
         form = admissionForm(request.POST, instance = admission1)
-        if form.is_valid():
-          print(form.cleaned_data)
+        semesterForm = currentSemForm(request.POST, instance=semester1)
+
+        if form.is_valid() and semesterForm.is_valid():
+          print(semesterForm.cleaned_data)
+
           admission = form.save(commit=False)
+          semester = semesterForm.save(commit=False)
+
           admission.user = user
+          semester.user = user
+
           admission.save()
+          semester.save()
+
+          print("Form Saved Admission")
 
 
         return redirect("personalinfo")
-    
-
-        #admission1 = admission2.objects.get(user=2)
-        
 
   else:
         admission1=admission2.objects.filter(user=request.user).first()
+        semester1 = semester2.objects.filter(user=request.user).first()
         #print(admission2)
-        if not admission1:
+        if not admission1 and semester1:
               form = admissionForm()
-
-        # adm_details=admission_details.objects.filter(user=request.user.id)
+              semesterForm = currentSemForm()
+        
         else:
           form = admissionForm(instance=admission1)
-          print("Hello else")
-          return render(request,'admission.html',{'form':form,'admission1':admission1})
+          semesterForm = currentSemForm(instance=semester1)
+        print("Hello else Admission")
+        return render(request, 'admission.html', {'form': form, 'admission1': admission1, 'semesterForm': semesterForm, 'semester1': semester1})
         
-  return render(request,'admission.html', context={'form': form , 'admission1': admission1})
+  return render(request, 'admission.html', context={'form': form, 'admission1': admission1, 'semesterForm': semesterForm, 'semester1': semester1})
 
 
 
@@ -142,25 +151,6 @@ def academic(request):
     return render(request, 'academic.html', context={'form': form, 'academic1': academic1})
 
 
-""" def submit_academic(request):
-
-  if request.method == 'POST':
-    
-    if request.user.is_authenticated:
-
-      user = request.user
-      print(user, "Submitted Academic")
-      form = academicForm(request.POST)
-      if form.is_valid():
-        #print(form.cleaned_data)
-        academic = form.save(commit=False)
-        academic.user = user
-        academic.save()
-
-
-        return redirect("achievementdetails")
-      else:
-        return render(request,'academic.html',context = {'form': form}) """
 
 
 """ def dynamic_table_view(request):

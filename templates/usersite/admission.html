@@ -128,6 +128,15 @@
     <br>
 
     <div class="container">
+        <label for="current_year">Current Year</label>
+        <input type="text" placeholder="Year" name="current_year"  value="{% if semester1.current_year %}{{ semester1.current_year }}{% else %} {% endif %}" >
+        <br>
+        <label for="current_sem">Current Semester</label>
+        <input type="text" placeholder="Semester" name="current_sem"  value="{% if semester1.current_sem %}{{ semester1.current_sem }}{% else %} {% endif %}">
+    </div>
+    <br>
+
+    <div class="container">
 
         <br>
         <ul style="margin-left: -2%;"><li><h4>Admission Details:</h4></li></ul>
