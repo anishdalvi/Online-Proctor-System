@@ -109,9 +109,23 @@ class academic(models.Model):
 
     user = models.ForeignKey(User,on_delete=models.CASCADE)
 
-    s1s1 = models.IntegerField()
-    s1s2 = models.IntegerField()
-    s1s3 = models.IntegerField()
-    s1s4 = models.IntegerField()
-    s1s5 = models.IntegerField()
-    s1s6 = models.IntegerField()
+    s1s1 = models.IntegerField(blank=True, null=True)
+    s1s2 = models.IntegerField(blank=True, null=True)
+    s1s3 = models.IntegerField(blank=True, null=True)
+    s1s4 = models.IntegerField(blank=True,null=True)
+    s1s5 = models.IntegerField(blank=True, null=True)
+    s1s6 = models.IntegerField(blank=True, null=True)
+
+
+class Semester(models.Model):
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    current_year = models.PositiveIntegerField(blank=True,null=True)
+    current_sem = models.PositiveIntegerField(blank=True,null=True)
+    # Add other fields like semester name, start date, end date, etc.
+
+
+class Subject(models.Model):
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
+    subject_name = models.CharField(max_length=50)
+    # Add other fields related to the subject, such as marks, credits, etc.
