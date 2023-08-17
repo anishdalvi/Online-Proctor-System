@@ -14,7 +14,7 @@ bs4==0.0.1
 cached-property==1.5.2
 cachetools==5.2.0
 celery==5.2.7
-certifi==2021.10.8
+certifi>=2023.7.22
 cffi==1.15.0
 charset-normalizer==2.0.12
 click==8.1.3
@@ -22,7 +22,7 @@ click-didyoumean==0.3.0
 click-plugins==1.1.1
 click-repl==0.2.0
 colorama==0.4.4
-cryptography==38.0.1
+cryptography>=41.0.3
 cssselect==1.1.0
 cssselect2==0.6.0
 Django==3.2.12
