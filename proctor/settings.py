@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
+
+import pymysql 
+
+
 import proctor
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -91,16 +95,25 @@ WSGI_APPLICATION = 'proctor.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'proctor_form',
+        'NAME':'proctorLaptop',
         'USER':'root',
-        'PASSWORD':'root',
-        'HOST':'127.0.0.1', 
+        'PASSWORD':'',
+        'HOST':'localhost', 
         'PORT':'3306',
+        'OPTIONS': {
+            'ssl': {
+                'ca': '/path/to/ca-cert.pem',     # Path to the CA certificate
+                'cert': '/path/to/client-cert.pem',  # Path to the client certificate
+                'key': '/path/to/client-key.pem',    # Path to the client private key
+                'check_hostname': False,   # Set to True to enable hostname checking
+            },
+        }
     }
 }
 
-
-
+# added the lines because of openSSL issue
+# pymysql.version_info = (1, 4, 2, "final", 0)
+# pymysql.install_as_MySQLdb()
 
 
 
