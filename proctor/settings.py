@@ -100,7 +100,14 @@ DATABASES = {
         'PASSWORD':'',
         'HOST':'localhost', 
         'PORT':'3306',
-        
+        'OPTIONS': {
+            'ssl': {
+                'ca': '/path/to/ca-cert.pem',     # Path to the CA certificate
+                'cert': '/path/to/client-cert.pem',  # Path to the client certificate
+                'key': '/path/to/client-key.pem',    # Path to the client private key
+                'check_hostname': False,   # Set to True to enable hostname checking
+            },
+        }
     }
 }
 
