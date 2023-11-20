@@ -145,7 +145,7 @@ def academic(request):
     previous_semesters = range(1, current_sem)
 
     number_subject = 6;
-    #print(current_sem)
+    # print(current_sem)
     if not academic1:
       print("if not academic1")
       form = academicForm()
