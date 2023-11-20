@@ -27,7 +27,9 @@ from django.contrib.auth.models import User
 
 @login_required
 def admission(request):
-  
+
+  branches = ['Computer Science Engineering', 'Information Technology Engineering', 'Electronics and Telecommunication Engineering', 'Electronics Engineering']
+
   if request.method == 'POST':
     if  request.user.is_authenticated:
 
@@ -47,6 +49,10 @@ def admission(request):
 
           admission.user = user
           semester.user = user
+
+           # Update the branch field
+          admission.branch = request.POST.get('branch', 'default')
+          print("Admission Branch:", admission1.branch)
 
           admission.save()
           semester.save()
@@ -68,9 +74,9 @@ def admission(request):
           form = admissionForm(instance=admission1)
           semesterForm = currentSemForm(instance=semester1)
         print("Hello else Loaded Admission")
-        return render(request, 'admission.html', {'form': form, 'admission1': admission1, 'semesterForm': semesterForm, 'semester1': semester1})
+        return render(request, 'admission.html', {'form': form, 'admission1': admission1, 'semesterForm': semesterForm, 'semester1': semester1, 'branches': branches})
         
-  return render(request, 'admission.html', context={'form': form, 'admission1': admission1, 'semesterForm': semesterForm, 'semester1': semester1})
+  return render(request, 'admission.html', context={'form': form, 'admission1': admission1, 'semesterForm': semesterForm, 'semester1': semester1, 'branches': branches})
 
 
 

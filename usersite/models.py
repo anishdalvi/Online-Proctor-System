@@ -20,28 +20,28 @@ from datetime import datetime
 # 	       return self.text
 
 class admission(models.Model):
-    """ COURSES = (
-    ('Select your branch', 'Select your branch'),
+    COURSES = (
+    ('default', 'default'),
     ('Computer Science Engineering', 'Computer Science Engineering'),
     ('Information Technology Engineering', 'Information Technology Engineering'),
     ('Electronics and Telecommunication Engineering', 'Electronics and Telecommunication Engineering'),
     ('Electronics Engineering', 'Electronics Engineering'),
     )
-    course = models.CharField(max_length=100, choices= COURSES, default='Select your branch') """
+    branch = models.CharField(max_length=100, choices= COURSES, default='default')
     procname = models.CharField(max_length=45, blank=True, null=True)
     surname = models.CharField(max_length=45, blank=True, null=True)
     name = models.CharField(max_length=45, blank=True, null=True)
     midname = models.CharField(max_length=45, blank=True, null=True)
     student_image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
 
-    rollsem1 = models.CharField(max_length=3, blank=True, null=True) 
-    rollsem2 = models.CharField(max_length=3, blank=True, null=True)
-    rollsem3 = models.CharField(max_length=3, blank=True, null=True)
-    rollsem4 = models.CharField(max_length=3, blank=True, null=True)
-    rollsem5 = models.CharField(max_length=3, blank=True, null=True)
-    rollsem6 = models.CharField(max_length=3, blank=True, null=True)
-    rollsem7 = models.CharField(max_length=3, blank=True, null=True)
-    rollsem8 = models.CharField(max_length=3, blank=True, null=True)
+    rollsem1 = models.IntegerField(blank=True, null=True) 
+    rollsem2 = models.IntegerField(blank=True, null=True)
+    rollsem3 = models.IntegerField(blank=True, null=True)
+    rollsem4 = models.IntegerField(blank=True, null=True)
+    rollsem5 = models.IntegerField(blank=True, null=True)
+    rollsem6 = models.IntegerField(blank=True, null=True)
+    rollsem7 = models.IntegerField(blank=True, null=True)
+    rollsem8 = models.IntegerField(blank=True, null=True)
     
     year = models.CharField(max_length=45, blank=True, null=True)
     category = models.CharField(max_length=45, blank=True, null=True, default='')

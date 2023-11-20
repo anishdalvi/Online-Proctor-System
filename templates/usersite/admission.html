@@ -37,8 +37,8 @@
         <h4 style="padding-top: 20px; text-align: center; text-transform: uppercase;">Department of</h4>
         
        <!--  <h4 style=" text-align: center; text-transform: uppercase;"> <input type="text" placeholder="ENTER YOUR BRANCH" "> </h4> -->
-     <div id="div1">
-        <h4 id="branch" class="branchselect" style="text-align:center; text-transform:uppercase">
+        <div id="div1">
+       <!--  <h4 id="branch" class="branchselect" style="text-align:center; text-transform:uppercase">
             <select id="dropdown" name="branch"style="background:transparent; border:2px solid transparent;" >
                 <option value="default" selected>Your Branch</option>
                 <option value="CS">CS</option>
@@ -49,8 +49,17 @@
                 <option value="Civil">Civil</option>
             </select>  
             
-        </h4>
+        </h4> -->
+        <h5 id="branch" class="branchselect" style="text-align:center; text-transform:uppercase">
+            <select id="dropdown" name="branch" style="background:transparent; border:2px solid transparent;">
+                <option value="default" >{{admission1.branch}}</option>
+                {% for branch in branches %}
+                <option value="{{ branch }}" >{{ branch }}</option>
+                {% endfor %}
+            </select>
+        </h5>
         </div>
+    
         <br> 
        
         <h3 id="proctorHeading" style="text-align: center; text-transform: uppercase; text-decoration: underline;">Proctor Record</h3>
@@ -80,19 +89,31 @@
 
     <div class="container ">
         
-        <h5>Name of the Proctor : <input type="text" name="procname" value="{{admission1.procname}}"> </h5>
-        <br>
         <table class="currentYearDetails">
             <tbody>
                 <tr>
-                    <td scope="col">Current Year : <input id="current_year" type="number" placeholder="1/2/3/4" 
-                            value="{% if semester1.current_year %}{{ semester1.current_year }}{% else %} {% endif %}" name="current_year"></td>
-                    
-                    <td scope="col">Current Semester : <input id="current_sem" type="number" placeholder="1/2/3/4/5/6" 
-                            value="{% if semester1.current_sem %}{{ semester1.current_sem }}{% else %} {% endif %}" name="current_sem"></td>
+                    <td>
+                        <div>
+                            Current Year : <input id="current_year" type="number" placeholder="1/2/3/4"
+                                value="{% if semester1.current_year %}{{ semester1.current_year }}{% else %} {% endif %}"
+                                name="current_year">
+                        </div>
+        
+                        <div>
+                            Current Semester : <input id="current_sem" type="number" placeholder="1/2/3/4/5/6"
+                                value="{% if semester1.current_sem %}{{ semester1.current_sem }}{% else %} {% endif %}"
+                                name="current_sem">
+                        </div>
+                    </td>
+        
+        
                 </tr>
             </tbody>
         </table>
+
+        <br>
+        
+        <h5>Name of the Proctor : <input type="text" name="procname" value="{{admission1.procname}}"> </h5>
 
         
      
