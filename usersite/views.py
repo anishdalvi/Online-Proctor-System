@@ -67,7 +67,7 @@ def admission(request):
         else:
           form = admissionForm(instance=admission1)
           semesterForm = currentSemForm(instance=semester1)
-        print("Hello else Admission")
+        print("Hello else Loaded Admission")
         return render(request, 'admission.html', {'form': form, 'admission1': admission1, 'semesterForm': semesterForm, 'semester1': semester1})
         
   return render(request, 'admission.html', context={'form': form, 'admission1': admission1, 'semesterForm': semesterForm, 'semester1': semester1})
@@ -104,7 +104,7 @@ def personalinfo(request):
         # adm_details=admission_details.objects.filter(user=request.user.id)
       else:
         form = personalinfoForm(instance=personalinfo1)
-        print("Hello else Personal Info")
+        print("Hello else Loaded Personal Info")
         return render(request, 'personalinfo.html', {'form': form, 'personalinfo1': personalinfo1})
 
   return render(request, 'personalinfo.html', context={'form': form, 'personalinfo1': personalinfo1})
@@ -137,7 +137,7 @@ def academic(request):
       return redirect('unauthorised')
 
   else:
-    print("else method not post")
+    print("Else method not post academic")
     academic1 = academic2.objects.filter(user=request.user).first()
     semester1 = semester2.objects.filter(user=request.user).first()
 
@@ -152,7 +152,7 @@ def academic(request):
 
     else:
       form = academicForm(instance=academic1)
-      print("Hello else Academic")
+      print("Hello else Loaded Academic")
       return render(request, 'academic.html', {'form': form, 'academic1': academic1, 'current_sem': current_sem, 'previous_semesters': previous_semesters, 'number_subject': number_subject})
 
     return render(request, 'academic.html', context={'form': form, 'academic1': academic1})

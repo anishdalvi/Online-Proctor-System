@@ -14,11 +14,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/usersite/admission.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/static/css/usersite/admission.css">
     
 </head>
 <body >
@@ -53,7 +53,7 @@
         </div>
         <br> 
        
-        <h3 style="text-align: center; text-transform: uppercase; text-decoration: underline;">Proctor Record</h3>
+        <h3 id="proctorHeading" style="text-align: center; text-transform: uppercase; text-decoration: underline;">Proctor Record</h3>
         
     </div>
     <!-- <div class="container">
@@ -78,11 +78,26 @@
  -->
     <br> <br>
 
-    <div class="container">
-     <h5>Name of the Proctor : <input type="text" name="procname" value="{{admission1.procname}}">  </h5>
-     {{n}}
+    <div class="container ">
+        
+        <h5>Name of the Proctor : <input type="text" name="procname" value="{{admission1.procname}}"> </h5>
+        <br>
+        <table class="currentYearDetails">
+            <tbody>
+                <tr>
+                    <td scope="col">Current Year : <input id="current_year" type="number" placeholder="1/2/3/4" 
+                            value="{% if semester1.current_year %}{{ semester1.current_year }}{% else %} {% endif %}" name="current_year"></td>
+                    
+                    <td scope="col">Current Semester : <input id="current_sem" type="number" placeholder="1/2/3/4/5/6" 
+                            value="{% if semester1.current_sem %}{{ semester1.current_sem }}{% else %} {% endif %}" name="current_sem"></td>
+                </tr>
+            </tbody>
+        </table>
 
-            <br>
+        
+     
+        <br>
+
         <table>
             <tbody>
                 <tr>
@@ -125,7 +140,7 @@
 
     </div>
 
-    <br>
+    <!-- <br>
 
     <div class="container">
         <label for="current_year">Current Year</label>
@@ -133,7 +148,7 @@
         <br>
         <label for="current_sem">Current Semester</label>
         <input type="text" placeholder="Semester" name="current_sem"  value="{% if semester1.current_sem %}{{ semester1.current_sem }}{% else %} {% endif %}">
-    </div>
+    </div> -->
     <br>
 
     <div class="container">
