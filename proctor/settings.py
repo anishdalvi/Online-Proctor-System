@@ -91,17 +91,23 @@ WSGI_APPLICATION = 'proctor.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'proctor_form',
+
+        # PC Database
+
+        # 'NAME':'proctor_form',
+        # 'USER':'root',
+        # 'PASSWORD':'root',
+        # 'HOST':'127.0.0.1', 
+        # 'PORT':'3306',
+
+        # Laptop Database
+        'NAME':'proctorLaptop',
         'USER':'root',
-        'PASSWORD':'root',
-        'HOST':'127.0.0.1', 
+        'PASSWORD':'',
+        'HOST':'localhost', 
         'PORT':'3306',
     }
 }
-
-
-
-
 
 
 # Password validation
