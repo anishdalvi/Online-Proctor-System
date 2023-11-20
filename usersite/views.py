@@ -93,6 +93,7 @@ def personalinfo(request):
         if form.is_valid():
           personalinfo = form.save(commit=False)
           personalinfo.user = user
+          print("Father Phone: ", personalinfo.Fnumber)
           personalinfo.save()
         
         return redirect("academic")
