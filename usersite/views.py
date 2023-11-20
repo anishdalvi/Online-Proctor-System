@@ -52,7 +52,7 @@ def admission(request):
 
            # Update the branch field
           admission.branch = request.POST.get('branch', 'default')
-          print("Admission Branch:", admission1.branch)
+          # print("Admission Branch:", admission1.branch)
 
           admission.save()
           semester.save()

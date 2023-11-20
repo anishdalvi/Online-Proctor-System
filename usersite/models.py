@@ -27,7 +27,7 @@ class admission(models.Model):
     ('Electronics and Telecommunication Engineering', 'Electronics and Telecommunication Engineering'),
     ('Electronics Engineering', 'Electronics Engineering'),
     )
-    branch = models.CharField(max_length=100, choices= COURSES, default='default')
+    branch = models.CharField(max_length=100, choices= COURSES)
     procname = models.CharField(max_length=45, blank=True, null=True)
     surname = models.CharField(max_length=45, blank=True, null=True)
     name = models.CharField(max_length=45, blank=True, null=True)
